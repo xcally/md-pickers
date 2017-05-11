@@ -354,7 +354,8 @@ module.directive("mdpTimePicker", ["$mdpTimePicker", "$timeout", function($mdpTi
                 $mdpTimePicker(ngModel.$modelValue, {
                     targetEvent: ev,
                     autoSwitch: scope.autoSwitch,
-                    ampm: scope.ampm
+                    ampm: scope.ampm,
+                    parent: element
                 }).then(function(time) {
                     updateTime(time, true);
                 });
@@ -389,7 +390,8 @@ module.directive("mdpTimePicker", ["$mdpTimePicker", "$timeout", function($mdpTi
                 $mdpTimePicker(ngModel.$modelValue, {
                     targetEvent: ev,
                     autoSwitch: scope.autoSwitch,
-                    ampm: scope.ampm
+                    ampm: scope.ampm,
+                    parent: element
                 }).then(function(time) {
                     ngModel.$setViewValue(moment(time).format(scope.format));
                     ngModel.$render();
