@@ -238,7 +238,8 @@ module.provider("$mdpTimePicker", function() {
                     autoSwitch: options.autoSwitch,
                     ampm: options.ampm
                 },
-                multiple: true
+                multiple: true,
+                parent: options.parent,
             });
         };
     
