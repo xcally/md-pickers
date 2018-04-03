@@ -157,7 +157,7 @@ module.directive("mdpClock", ["$animate", "$timeout", function($animate, $timeou
         link: function(scope, element, attrs, ctrl) {
             var pointer = angular.element(element[0].querySelector(".mdp-pointer")),
 				timepickerCtrl = scope.$parent.timepicker;
-				
+
             scope.raised = false;
 
             var onEvent = function(event) {
@@ -219,6 +219,8 @@ module.provider("$mdpTimePicker", function() {
                 controller:  ['$scope', '$mdDialog', 'time', 'autoSwitch', 'ampm', '$mdMedia', TimePickerCtrl],
                 controllerAs: 'timepicker',
                 clickOutsideToClose: true,
+                skipHide: true,
+            		multiple: true,
                 template: '<md-dialog aria-label="" class="mdp-timepicker" ng-class="{ \'portrait\': !$mdMedia(\'gt-xs\') }">' +
                             '<md-dialog-content layout-gt-xs="row" layout-wrap>' +
                                 '<md-toolbar layout-gt-xs="column" layout-xs="row" layout-align="center center" flex class="mdp-timepicker-time md-hue-1 md-primary">' +
@@ -254,7 +256,6 @@ module.provider("$mdpTimePicker", function() {
                     autoSwitch: options.autoSwitch,
                     ampm: angular.isDefined(options.ampm) ? options.ampm : $mdpLocale.time.ampm
                 },
-                multiple: true,
                 parent: PARENT_GETTER()
             });
         };
@@ -379,7 +380,7 @@ module.directive("mdpTimePicker", ["$mdpTimePicker", "$timeout", "$mdpLocale", f
             ngModel.$validators.required = function(modelValue, viewValue) {
                 return angular.isUndefined(attrs.required) || attrs.required === false || !ngModel.$isEmpty(modelValue) || !ngModel.$isEmpty(viewValue);
             };
-            
+
             ngModel.$validators.minTime = function(modelValue, viewValue) {
                 return minTimeValidator(viewValue, scope.timeFormat, opts.minTime);
             };
