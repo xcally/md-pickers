@@ -1,14 +1,17 @@
 {
-  "name": "md-pickers",
-  "version": "1.1.3",
+  "name": "@xenialab/md-pickers",
+  "version": "1.1.4",
   "description": "Material Design date/time pickers built with Angular Material and Moment.js",
-  "main": "index",
+  "main": "dist/mdPickers.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielecinti/md-pickers"
+    "url": "https://github.com/xcally/md-pickers"
   },
   "keywords": [
     "material",
@@ -24,9 +27,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dpoetzsch/md-pickers/issues"
+    "url": "https://github.com/xcally/md-pickers/issues"
   },
-  "homepage": "https://github.com/dpoetzsch/md-pickers",
+  "homepage": "https://github.com/xcally/md-pickers/md-pickers",
   "dependencies": {
     "angular": "~1.5.0 || ~1.6.0",
     "angular-material": "^1.0.4",
